@@ -1,0 +1,23 @@
+# Dev
+[tasks.dev]
+description = "Dev all services"
+run_task = {name = ["dev-back", "dev-front"], parallel = true}
+workspace = false
+
+# Backend
+[tasks.dev-back]
+cwd = "backend"
+description = "Dev Backend"
+script = [
+  "cargo run",
+]
+workspace = false
+
+# Frontend
+[tasks.dev-front]
+cwd = "frontend"
+description = "Dev Frontend"
+script = [
+  "yarn dev",
+]
+workspace = false
